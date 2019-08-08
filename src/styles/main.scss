@@ -6,7 +6,8 @@
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 200px);
-  grid-gap: 30px 40px;
+  gap: 30px 40px;
+  margin-top: 30px;
 
   @media (min-width: 1000px) {
     & {
@@ -24,16 +25,17 @@
 }
 
 .person {
-  transition: all 0.2s ease;
-
+  height: 230px;
+  transition: transform 1s ease 1s;
   .photo > img {
     height: 200px;
     border-radius: 50%;
     margin-bottom: 8px;
-    transition: border-radius 1s, transform 1s;
+    transition: border-radius 1s ease 1s , transform 1s;
   }
 
   .extra {
+    transition: all 1s ease;
     padding: 5px;
     display: none;
     font-size: 18px;
@@ -52,6 +54,10 @@
   .pay::after {
     content: "M";
   }
+}
+
+.name {
+  transition: scale 1s ease 0s;
 }
 
 .details {
@@ -83,7 +89,7 @@
 
 .person:hover {
   background: #eee;
-  transform: scale(1.35) translateY(15px);
+  transform: scale(1.2);
   z-index: 1;
 
   img {
