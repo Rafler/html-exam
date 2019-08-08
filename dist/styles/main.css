@@ -8,7 +8,100 @@ h1 {
   font-weight: normal;
   font-style: normal; }
 
-body {
-  background: #eee; }
+.people {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: repeat(2, 200px);
+  gap: 30px 40px;
+  margin-top: 30px; }
+  @media (min-width: 1000px) {
+    .people {
+      grid-template-columns: repeat(4, 200px); } }
+
+.photo {
+  position: relative; }
+  .photo img {
+    border-radius: 200px;
+    width: 200px; }
+
+.person {
+  height: 230px;
+  -webkit-transition: -webkit-transform 1s ease 1s;
+  transition: -webkit-transform 1s ease 1s;
+  transition: transform 1s ease 1s;
+  transition: transform 1s ease 1s, -webkit-transform 1s ease 1s; }
+  .person .photo > img {
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    -webkit-transition: border-radius 1s ease 1s , -webkit-transform 1s;
+    transition: border-radius 1s ease 1s , -webkit-transform 1s;
+    transition: border-radius 1s ease 1s , transform 1s;
+    transition: border-radius 1s ease 1s , transform 1s , -webkit-transform 1s; }
+  .person .extra {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    padding: 5px;
+    display: none;
+    font-size: 18px;
+    line-height: 21px;
+    color: black; }
+  .person .sport::after {
+    content: ","; }
+  .person .pay::before {
+    content: "$"; }
+  .person .pay::after {
+    content: "M"; }
+
+.name {
+  -webkit-transition: scale 1s ease 0s;
+  transition: scale 1s ease 0s; }
+
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  color: #2f4f4f; }
+
+.rank {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #8b0000;
+  border-radius: 50%;
+  margin: auto 10px auto auto;
+  line-height: 32px; }
+
+.person:hover {
+  background: #eee;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 1; }
+  .person:hover img {
+    border-radius: 60px;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    margin: 0; }
+  .person:hover .extra {
+    background: #eee;
+    display: block;
+    color: #000; }
 
 /*# sourceMappingURL=main.css.map */
