@@ -14,7 +14,8 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   grid-template-columns: repeat(2, 200px);
-  grid-gap: 30px 40px; }
+  gap: 30px 40px;
+  margin-top: 30px; }
   @media (min-width: 1000px) {
     .people {
       grid-template-columns: repeat(4, 200px); } }
@@ -26,17 +27,22 @@ h1 {
     width: 200px; }
 
 .person {
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
+  height: 230px;
+  -webkit-transition: -webkit-transform 1s ease 1s;
+  transition: -webkit-transform 1s ease 1s;
+  transition: transform 1s ease 1s;
+  transition: transform 1s ease 1s, -webkit-transform 1s ease 1s; }
   .person .photo > img {
     height: 200px;
     border-radius: 50%;
     margin-bottom: 8px;
-    -webkit-transition: border-radius 1s, -webkit-transform 1s;
-    transition: border-radius 1s, -webkit-transform 1s;
-    transition: border-radius 1s, transform 1s;
-    transition: border-radius 1s, transform 1s, -webkit-transform 1s; }
+    -webkit-transition: border-radius 1s ease 1s , -webkit-transform 1s;
+    transition: border-radius 1s ease 1s , -webkit-transform 1s;
+    transition: border-radius 1s ease 1s , transform 1s;
+    transition: border-radius 1s ease 1s , transform 1s , -webkit-transform 1s; }
   .person .extra {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
     padding: 5px;
     display: none;
     font-size: 18px;
@@ -48,6 +54,10 @@ h1 {
     content: "$"; }
   .person .pay::after {
     content: "M"; }
+
+.name {
+  -webkit-transition: scale 1s ease 0s;
+  transition: scale 1s ease 0s; }
 
 .details {
   display: -webkit-box;
@@ -81,8 +91,8 @@ h1 {
 
 .person:hover {
   background: #eee;
-  -webkit-transform: scale(1.35) translateY(15px);
-          transform: scale(1.35) translateY(15px);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   z-index: 1; }
   .person:hover img {
     border-radius: 60px;
